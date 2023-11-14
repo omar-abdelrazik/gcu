@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Dec2Hex {
 
     public static String convertDecToHex(int decimal) {
