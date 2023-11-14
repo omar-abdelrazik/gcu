@@ -1,39 +1,28 @@
 import java.util.Scanner;
 
-class Dec2Hex {
+public class Dec2Hex {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Check for input argument
         if (args.length == 0) {
-            System.err.println("Error: Please provide an input argument.");
-            System.exit(1);
+            System.err.println("Error: No input provided. Please provide a decimal number as an input argument.");
+            return; // Using return instead of System.exit for a softer exit
         }
 
-        // Parse the input argument as an integer
         try {
-            int Arg1 = Integer.parseInt(args[0]);
+            // Parse the input argument as an integer
+            int decimalNumber = Integer.parseInt(args[0]);
+            System.out.println("Converting the Decimal Value " + decimalNumber + " to Hex...");
 
-            // Continue with the rest of your code
-            char ch[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-            int rem, num;
-            num = Arg1;
-            String hexadecimal = "";
-            System.out.println("Converting the Decimal Value " + num + " to Hex...");
+            // Convert to hexadecimal using built-in method
+            String hexString = Integer.toHexString(decimalNumber).toUpperCase();
 
-            while (num != 0) {
-                rem = num % 16;
-                hexadecimal = ch[rem] + hexadecimal;
-                num = num / 16;
-            }
-
-            System.out.println("Hexadecimal representation is: " + hexadecimal);
-            System.out.println("THANKYOU ");
-
+            System.out.println("Hexadecimal representation is: " + hexString);
+            System.out.println("THANKS OMAR");
 
         } catch (NumberFormatException e) {
             // Handle non-integer inputs
-            System.err.println("Error: Input must be an integer.");
-            System.exit(1);
+            System.err.println("Error: Invalid input. The input must be an integer.");
         }
     }
 }
